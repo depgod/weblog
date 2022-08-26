@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-us" class="h-100">
+  <head>
+    <title>
+      Managing GPG keys on linux for better security – shellshock – None
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The page supports both dark and light color schemes, and the page author prefers / default is light. -->
+    <meta name="color-scheme" content="dark light" />
+    <!-- Stylesheet that includes Bootstrap dark mode & custom stylesheet -->
+    <link
+      rel="stylesheet"
+      href="/assets/css/styles.css"
+    />
+    <link rel="icon" href="/assets/images/favicon.ico" />
+    <!-- Meta Theme Color is also supported on Safari and Chrome -->
+    <meta
+      name="theme-color"
+      content="#eeeeee"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#111111"
+      media="(prefers-color-scheme: light)"
+    />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Managing GPG keys on linux for better security | shellshock</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Managing GPG keys on linux for better security" />
+<meta name="author" content="shellshock" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tutorial" />
+<meta property="og:description" content="Tutorial" />
+<link rel="canonical" href="http://localhost:4000/2022/08/18/gpg/" />
+<meta property="og:url" content="http://localhost:4000/2022/08/18/gpg/" />
+<meta property="og:site_name" content="shellshock" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-18T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Managing GPG keys on linux for better security" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"shellshock"},"dateModified":"2022-08-18T00:00:00+05:30","datePublished":"2022-08-18T00:00:00+05:30","description":"Tutorial","headline":"Managing GPG keys on linux for better security","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/08/18/gpg/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/terminal.png"},"name":"shellshock"},"url":"http://localhost:4000/2022/08/18/gpg/"}</script>
+<!-- End Jekyll SEO tag -->
+ <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="shellshock" /></head>
+  <body class="d-flex flex-column h-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand p-0" href="/">
+    
+    <img src="/assets/images/terminal.png" alt="light avatar" width="30" class="d-inline-block align-top m-0 light-avatar">
+    <img src="/assets/images/terminal.png" alt="dark avatar" width="30" class="d-inline-block align-top m-0 dark-avatar">
+    
+      shellshock</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        
+          <li class="nav-item">
+            <a href="/"  class="nav-link" >Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about/"  class="nav-link" >About</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/contact/"  class="nav-link" >Contact</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/portfolio/"  class="nav-link" >Portfolio</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="body"><div class="post">
+  <h1>Managing GPG keys on linux for better security</h1>
+  <span class="fs-4 text-muted">Aug 18, 22</span>
+  <div class="mt-4"><h2 id="tutorial">Tutorial</h2>
+
+<ol>
+  <li>Create your own private/public key pair and revocation certificate
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>gpg <span class="nt">--expert</span> <span class="nt">--full-gen-key</span>	
+</code></pre></div>    </div>
+  </li>
+  <li>Export you public key
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>gpg <span class="nt">--armor</span> <span class="nt">--export</span> user-id <span class="o">&gt;</span> pubkey.asc
+</code></pre></div>    </div>
+  </li>
+  <li>Export your private key
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>gpg <span class="nt">--export-secret-keys</span> <span class="nt">--armor</span> user-id <span class="o">&gt;</span> privkey.asc
+</code></pre></div>    </div>
+  </li>
+  <li>Protect your priavte key and revocation certificate by keeping them somewhere safe.</li>
+  <li>List keys by signature:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>gpg <span class="nt">--list-sigs</span> user_id
+</code></pre></div>    </div>
+  </li>
+  <li>List all keys:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>gpg <span class="nt">--list-keys</span> user_id
+</code></pre></div>    </div>
+  </li>
+  <li>Share your public key on a public keyserver
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>gpg <span class="nt">--send-key</span> key_id
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p><strong>NOTE</strong>: In Ubuntu by default all the keys are uploaded to keyserver.openpgp.com</p>
+    </blockquote>
+  </li>
+  <li>Change default keyserver to another keyserver:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span>gpg <span class="o">[</span>keyserver-address] <span class="nt">--send-key</span> key_id
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p><strong>NOTE</strong>: If a public key is sent to OpenPGP, it sends a notification 
+ on keyowners email address</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>By default keys are not available for search by email address, the mail
+from openpgp has a link inside it, which needs to be clicked to verify identity</p>
+  </li>
+  <li>After your key is verified, you can serach for your key on the keyserver:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--search</span> user_id
+</code></pre></div>    </div>
+  </li>
+  <li>Import others public key to your key-ring:
+    <blockquote>
+      <p>If you want to send someone an encrypted message you´ll first need to import
+their public key from a file or keyserver</p>
+    </blockquote>
+
+    <ol>
+      <li>Import key from a file:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--import</span> public_key_file
+</code></pre></div>        </div>
+      </li>
+      <li>Import if you already know a key_id:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--recv-keys</span> key_id
+</code></pre></div>        </div>
+      </li>
+      <li>Import from a particular keyserver:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--keyserver</span> <span class="o">[</span>keyserver-address] <span class="nt">--recv-keys</span> key_id
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>Validate public keys:
+    <blockquote>
+      <p>When you recieve a public key from someone, once you imported that public key
+how would you verify that public key belongs to that person, we need to authenticate it.</p>
+    </blockquote>
+
+    <p>We can try following alternatives:</p>
+    <ol>
+      <li>You can view the fingerprint of the public key
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--fingerprint</span> user_id
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>You can contact the keyś owner over the phone or meet in person.</p>
+      </li>
+      <li>
+        <p>Compare the two fingerprints and if the two fingerprints match, means you have the right public key</p>
+      </li>
+      <li>Then you sign the key as a valid key:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--sign-key</span> key_id
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Managing your keys</p>
+
+    <ol>
+      <li>List all keys
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--list-keys</span>
+</code></pre></div>        </div>
+      </li>
+      <li>List all keys with signature
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--list-sigs</span>
+</code></pre></div>        </div>
+      </li>
+      <li>Delete a key-id
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--delete_key</span> key_id
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>List keys in your private ring
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--list-secret-key</span>
+</code></pre></div>    </div>
+  </li>
+  <li>How to extend key expiration date
+    <ol>
+      <li>List all the keys
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--list-keys</span>
+</code></pre></div>        </div>
+      </li>
+      <li>Select a key using key-id which you want to change expiration of
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--edit-key</span> key-id
+</code></pre></div>        </div>
+      </li>
+      <li>Now you’ll enter the gpg shell, here you can see all the applicable commands using <code class="language-plaintext highlighter-rouge">help</code>command
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg&gt; <span class="nb">help</span>
+</code></pre></div>        </div>
+      </li>
+      <li>List all the keys and select a key you want to edit
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg&gt; list
+</code></pre></div>        </div>
+      </li>
+      <li>Now enter  <code class="language-plaintext highlighter-rouge">expire</code> in the gpg shell to start editing the expiration date
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg&gt; expire
+Changing expiration <span class="nb">time </span><span class="k">for </span>the primary key.
+Please specify how long the key should be valid.
+      0 <span class="o">=</span> key does not expire
+   &lt;n&gt;  <span class="o">=</span> key expires <span class="k">in </span>n days
+   &lt;n&gt;w <span class="o">=</span> key expires <span class="k">in </span>n weeks
+   &lt;n&gt;m <span class="o">=</span> key expires <span class="k">in </span>n months
+   &lt;n&gt;y <span class="o">=</span> key expires <span class="k">in </span>n years
+Key is valid <span class="k">for</span>? <span class="o">(</span>0<span class="o">)</span>
+</code></pre></div>        </div>
+      </li>
+      <li>Save the changes
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg&gt; save
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>How to use the revocation certificate
+    <blockquote>
+      <p>If you’re private key is compromised you can regenerate a new key pair using the revocation certificate to let everyone know that you are not using you’re old key anymore.</p>
+    </blockquote>
+
+    <blockquote>
+      <p>On Linux their’s a default revocation certificate stored in <code class="language-plaintext highlighter-rouge">~/.gnupg/openpgp-revocs.d/</code> location.</p>
+    </blockquote>
+  </li>
+  <li>Following command should be used to revoke a key using a revocation certificate
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--output</span> revocation.rev <span class="nt">--gen-revoke</span> key-id
+</code></pre></div>    </div>
+  </li>
+  <li>Now you should import it to your keyring
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--import</span> revocation.rev
+</code></pre></div>    </div>
+  </li>
+  <li>Now upload the revoked key to the keyserver
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gpg <span class="nt">--send-key</span> key-id
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+</div>
+</div>
+</div>
+    </div>
+    <footer class="footer mt-auto py-3">
+  <div class="container footer-container">
+<a class="footer-icon-links" href="mailto:email@email.com">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-envelope-fill footer-icons"
+    viewBox="0 0 16 16"
+  >
+    <path
+      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
+    />
+  </svg>
+</a>
+      
+</div>
+</footer>
+
+    <!-- JS for Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us" class="h-100">
+  <head>
+    <title>
+      Basic file archiving and compression on linux – shellshock – None
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The page supports both dark and light color schemes, and the page author prefers / default is light. -->
+    <meta name="color-scheme" content="dark light" />
+    <!-- Stylesheet that includes Bootstrap dark mode & custom stylesheet -->
+    <link
+      rel="stylesheet"
+      href="/assets/css/styles.css"
+    />
+    <link rel="icon" href="/assets/images/favicon.ico" />
+    <!-- Meta Theme Color is also supported on Safari and Chrome -->
+    <meta
+      name="theme-color"
+      content="#eeeeee"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#111111"
+      media="(prefers-color-scheme: light)"
+    />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Basic file archiving and compression on linux | shellshock</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Basic file archiving and compression on linux" />
+<meta name="author" content="shellshock" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Archiving a file $ tar -cvf filename.tar foldername/location `-c` create `-v` verbos output `-f` set a filename/filelocation" />
+<meta property="og:description" content="Archiving a file $ tar -cvf filename.tar foldername/location `-c` create `-v` verbos output `-f` set a filename/filelocation" />
+<link rel="canonical" href="http://localhost:4000/2022/08/18/file-archiving-compression/" />
+<meta property="og:url" content="http://localhost:4000/2022/08/18/file-archiving-compression/" />
+<meta property="og:site_name" content="shellshock" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-18T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Basic file archiving and compression on linux" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"shellshock"},"dateModified":"2022-08-18T00:00:00+05:30","datePublished":"2022-08-18T00:00:00+05:30","description":"Archiving a file $ tar -cvf filename.tar foldername/location `-c` create `-v` verbos output `-f` set a filename/filelocation","headline":"Basic file archiving and compression on linux","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/08/18/file-archiving-compression/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/terminal.png"},"name":"shellshock"},"url":"http://localhost:4000/2022/08/18/file-archiving-compression/"}</script>
+<!-- End Jekyll SEO tag -->
+ <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="shellshock" /></head>
+  <body class="d-flex flex-column h-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand p-0" href="/">
+    
+    <img src="/assets/images/terminal.png" alt="light avatar" width="30" class="d-inline-block align-top m-0 light-avatar">
+    <img src="/assets/images/terminal.png" alt="dark avatar" width="30" class="d-inline-block align-top m-0 dark-avatar">
+    
+      shellshock</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        
+          <li class="nav-item">
+            <a href="/"  class="nav-link" >Home</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/about/"  class="nav-link" >About</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/contact/"  class="nav-link" >Contact</a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/portfolio/"  class="nav-link" >Portfolio</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      <div class="body"><div class="post">
+  <h1>Basic file archiving and compression on linux</h1>
+  <span class="fs-4 text-muted">Aug 18, 22</span>
+  <div class="mt-4"><ol>
+  <li><strong>Archiving a file</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">tar</span> <span class="nt">-cvf</span> filename.tar foldername/location  
+     <span class="sb">`</span><span class="nt">-c</span><span class="sb">`</span> create  
+     <span class="sb">`</span><span class="nt">-v</span><span class="sb">`</span> verbos output  
+     <span class="sb">`</span><span class="nt">-f</span><span class="sb">`</span> <span class="nb">set </span>a filename/filelocation  
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Compressing a file</strong><br />
+ a. To compress a file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">gzip </span>filename.tar    
+</code></pre></div>    </div>
+
+    <p>b. Show the file:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nv">$ </span><span class="nb">ls</span>  
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Extracting a compressed file</strong><br />
+To unzip and extract a file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar</span> <span class="nt">-xzvf</span> filename.tar.gz    
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+</div>
+</div>
+</div>
+    </div>
+    <footer class="footer mt-auto py-3">
+  <div class="container footer-container">
+<a class="footer-icon-links" href="mailto:email@email.com">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-envelope-fill footer-icons"
+    viewBox="0 0 16 16"
+  >
+    <path
+      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"
+    />
+  </svg>
+</a>
+      
+</div>
+</footer>
+
+    <!-- JS for Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
