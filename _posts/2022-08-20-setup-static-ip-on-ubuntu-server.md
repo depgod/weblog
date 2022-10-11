@@ -33,7 +33,7 @@ $ network:
         - 8.8.4.4  
 ```  
 Here we have disabled DHCP and given a local ip with gateway and nameservers.  
-__NOTE: YAML files are highly case sensitive.__  
+__NOTE: YAML files are highly space sensitive.__  
 
 4. After saving the above file:
 ```bash
