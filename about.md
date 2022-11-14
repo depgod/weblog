@@ -8,5 +8,4 @@ permalink: /about/
 
 ### Why this blog exists?
 
-I have made this using the Jekyll static site generator.
-
+It exists because I am learning stuff and posting it here side by side, if there are any errors that needs to be fixed please email me.
