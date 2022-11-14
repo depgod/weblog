@@ -9,7 +9,7 @@ Understanding read, write and executable permissions.
 
 If we do `ls -l`:  
 ```bash
-.rw-rw-r-- user family 168 B  Sun Nov 13 01:59:08 2022 things.txt
+$ .rw-rw-r-- user family 168 B  Sun Nov 13 01:59:08 2022 things.txt
 ```
 Here as we can see a dot "." at the head part of the output line shows that this is a regular file.
 

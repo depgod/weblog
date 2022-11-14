@@ -7,7 +7,7 @@ title: Octal Permissions
 
 In order to understand octal permissions we need to use the `stat` command:  
 ```bash
-stat family_dog.jpg
+$ stat family_dog.jpg
 ```
 __Output__:
 ```bash
@@ -47,7 +47,7 @@ For another example lets see how we can use octal values to set permission for a
 
 Suppose we want to give read, write and executing permissions to the user how will the octal values look like?  
 ```bash
-chmod 740 family_dog.jpg
+$ chmod 740 family_dog.jpg
 ```
 
 We gave 7 as we wanted the user to have read, write and executing permissions and group had 4 means group had only read permission and others had 0 as per the binary table.  

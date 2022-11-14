@@ -31,11 +31,11 @@ Shows an example of a file in that directory.
 ### Reading hard/softlinks of a file
 
 ```bash
-readlink family_dog_shortcut.jpg
+$ readlink family_dog_shortcut.jpg
 ```
 Output:
 ```bash
-/home/aaron/Pictures/family_dog.jpg
+$ /home/aaron/Pictures/family_dog.jpg
 ```
 Shows hard and softlinks of mentioned file.
 

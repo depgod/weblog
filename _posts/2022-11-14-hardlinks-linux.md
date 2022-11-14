@@ -1,6 +1,6 @@
 ---
 layout: post
-title: hardlinks in linux
+title: Hardlinks in Linux
 ---
 
 # Hard Links in Linux
@@ -47,7 +47,7 @@ Major benifit from hardlinking is that a file can be accessed by multiple users 
 ## Creating hardlinks:
 
 ```bash
-ln /home/Jason/filename.jpg /home/araon/filename.jpg
+$ ln /home/Jason/filename.jpg /home/araon/filename.jpg
 ```
 
 
