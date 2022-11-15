@@ -17,10 +17,15 @@ darkavatar: /assets/images/terminal.png
 # Code highlighting
 markdown: kramdown
 highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class: 'syntax'
 
 
 # A short description (e.g., A blog dedicated to reviewing cat gifs), used as part of the title tag like Ben's Awesome Site | A blog dedicated to reviewing cat gifs instead of Ben's Awesome Site | Long description about a blog dedicated to reviewing cat gifs that would be used when page.title is not defined.
-tagline: sysadmin?
+tagline: linux
 
 # A longer description used for the description meta tag. Also used as fallback for pages that don't provide their own description, and also as part of the page's title tag if neither page.title nor site.tagline has been defined.
 description: None
@@ -48,11 +53,8 @@ permalink: /:year/:month/:day/:title/
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  email: redpulsar@skiff.com
-  facebook: facebook
+  email: shellshock.mail@skiff.com
   github: depgod
-  instagram: instagram
-  linkedin: 
   rss: RSS
   twitter: www.twitter.com
 
