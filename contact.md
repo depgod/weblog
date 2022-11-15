@@ -10,4 +10,4 @@ permalink: /contact/
 2. Matrix
 3. Twitter
 4. Mastodon
-5. Email: redpulsar@skiff.com
+5. Email: shellshock.mail@skiff.com
