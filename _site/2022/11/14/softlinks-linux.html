@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="direction--ltr"lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Softlinks in linux | shellshock</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Softlinks in linux" />
+<meta name="author" content="shellshock" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Softlinks in linux" />
+<meta property="og:description" content="Softlinks in linux" />
+<link rel="canonical" href="http://localhost:4000/2022/11/14/softlinks-linux.html" />
+<meta property="og:url" content="http://localhost:4000/2022/11/14/softlinks-linux.html" />
+<meta property="og:site_name" content="shellshock" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-14T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Softlinks in linux" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"shellshock"},"dateModified":"2022-11-14T00:00:00+05:30","datePublished":"2022-11-14T00:00:00+05:30","description":"Softlinks in linux","headline":"Softlinks in linux","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/11/14/softlinks-linux.html"},"url":"http://localhost:4000/2022/11/14/softlinks-linux.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="shellshock" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
+  <script src="/assets/js/jquery.magnific-popup.js"></script>
+</head>
+<body><div class="site-header">
+  <div class="wrapper">
+	  <a class="site-title" rel="author" href="/">shellshock<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>&nbsp;&nbsp;<a href="http://127.0.0.1:4000/2022/11/16/about.html">About</a>&nbsp;&nbsp;<a href="http://127.0.0.1:4000/2022/11/16/contact.html">Contact</a>
+    <span class="social_links">
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/linux"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="https://shellshock.lol"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/depgod"><i class="fab fa-github-square"></i></a>
+        
+        
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+
+
+<img src="
+    https://gravatar.com/avatar/a166cdeed75cd149146b95ecc7459bf5?s=256
+" class="author-avatar" alt="Avatar" />
+<div class="description">I am a junior sysadmin with main focus on linux and freebsd. To make a living I sometimes do web developement and small b2b digital office solutions like nextcloud, onlyoffice, vpn and moodle LMS. In the mean time I love tinkering with new things in linux and BSD and even sometimes compiling my own android custom roms with custom android apps.
+</div>
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Softlinks in linux</h1>
+  
+  <div class="post-date">
+    Published on 14 Nov 2022
+    
+  </div>
+  
+  <h1 id="softlinks-in-linux">Softlinks in linux</h1>
+
+<p>Softlinks are basically an absolute path to the executable, like in windows we see desktop shortcuts which actually leads to an absolute path of the executable resulting in executing that file upon clicking.</p>
+
+<h3 id="creating-softlinks">Creating softlinks</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ln</span> <span class="nt">-s</span> path_to_target_file path_to_link_file
+</code></pre></div></div>
+
+<p>path_to_target_file -&gt; original file<br />
+path_to_link_file -&gt; represents shortcut</p>
+
+<h3 id="viewing-hardsoftlinks">Viewing hard/softlinks</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+</code></pre></div></div>
+<p><strong>Output</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>lrwxrwxrwx root root     23 B  Sun Jul 17 00:48:34 2022  vtrgb ⇒ /etc/alternatives/vtrgb
+</code></pre></div></div>
+
+<p>Shows an example of a file in that directory.</p>
+
+<h3 id="reading-hardsoftlinks-of-a-file">Reading hard/softlinks of a file</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">readlink </span>family_dog_shortcut.jpg
+</code></pre></div></div>
+<p>Output:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>/home/aaron/Pictures/family_dog.jpg
+</code></pre></div></div>
+<p>Shows hard and softlinks of mentioned file.</p>
+
+<h2 id="important-points-of-softlinks">Important points of softlinks</h2>
+
+<p>Softlinks can be made between file to file or dir to dir or even between different filesystems.</p>
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2022/11/14/softlinks-linux.html';
+     this.page.identifier = '/2022/11/14/softlinks-linux';
+     this.page.title = 'Softlinks in linux';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//shellshock100.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2022/11/16/contact.html">
+            Contact
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/11/16/about.html">
+            About
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/11/14/suid-agid-and-stickybit.html">
+            SUID, SGID and Stickybit
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits">This site is made with Jekyll by <a href="https://github.com/depgod">shellshock</a> with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

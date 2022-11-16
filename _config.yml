@@ -1,0 +1,64 @@
+title: shellshock
+author: shellshock
+email: shellshock.mail@skiff.com
+description: > # this means to ignore newlines until "show_exerpts:"
+  I am a junior sysadmin with main focus on linux and freebsd. To make a living I sometimes
+  do web developement and small b2b digital office solutions like nextcloud, onlyoffice, vpn and
+  moodle LMS. In the mean time I love tinkering with new things in linux and BSD and even sometimes
+  compiling my own android custom roms with custom android apps.
+show_excerpts: false # set to true to show excerpts on the homepage
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+tag_permalink_style: pretty
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+# jekyll-dash date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+dash:
+  # the way how dates should be displayed
+  date_format: "%b %-d, %Y"
+
+  # (optional) discqus comment configuration
+  disqus:
+    shortname: shellshock100
+
+  # generate social links in footer
+  # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
+  social_links:
+    - url: https://twitter.com/linux
+      icon: twitter-square
+      color: cyan
+    - url: https://shellshock.lol
+      icon: itch-io
+      color: red
+    - url: https://github.com/depgod
+      icon: github-square
+      color: purple
+
+  # wether the author box should be displayed
+  show_author: true
+
+  # the animation speed of the scroll-in effect
+  animation_speed: 50
+
+  # wether to enable Right-to-Left support or not
+  rtl: false
+
+  # Replaces the default avatar provider (gravatar)
+  #avatar_source: github
+  #github_username: bitbrain
+  #avatar_source: local
+  #avatar_path: /assets/avatar.png
+
+# Build settings
+theme: jekyll-dash
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+ - jekyll-paginate
+ - liquid-md5
+   # - jekyll/tagging

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="direction--ltr"lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hardlinks in Linux | shellshock</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Hardlinks in Linux" />
+<meta name="author" content="shellshock" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hard Links in Linux" />
+<meta property="og:description" content="Hard Links in Linux" />
+<link rel="canonical" href="http://localhost:4000/2022/11/14/hardlinks-linux.html" />
+<meta property="og:url" content="http://localhost:4000/2022/11/14/hardlinks-linux.html" />
+<meta property="og:site_name" content="shellshock" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-14T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hardlinks in Linux" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"shellshock"},"dateModified":"2022-11-14T00:00:00+05:30","datePublished":"2022-11-14T00:00:00+05:30","description":"Hard Links in Linux","headline":"Hardlinks in Linux","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/11/14/hardlinks-linux.html"},"url":"http://localhost:4000/2022/11/14/hardlinks-linux.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="shellshock" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
+  <script src="/assets/js/jquery.magnific-popup.js"></script>
+</head>
+<body><div class="site-header">
+  <div class="wrapper">
+	  <a class="site-title" rel="author" href="/">shellshock<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>&nbsp;&nbsp;<a href="http://127.0.0.1:4000/2022/11/16/about.html">About</a>&nbsp;&nbsp;<a href="http://127.0.0.1:4000/2022/11/16/contact.html">Contact</a>
+    <span class="social_links">
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/linux"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="https://shellshock.lol"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/depgod"><i class="fab fa-github-square"></i></a>
+        
+        
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+
+
+<img src="
+    https://gravatar.com/avatar/a166cdeed75cd149146b95ecc7459bf5?s=256
+" class="author-avatar" alt="Avatar" />
+<div class="description">I am a junior sysadmin with main focus on linux and freebsd. To make a living I sometimes do web developement and small b2b digital office solutions like nextcloud, onlyoffice, vpn and moodle LMS. In the mean time I love tinkering with new things in linux and BSD and even sometimes compiling my own android custom roms with custom android apps.
+</div>
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Hardlinks in Linux</h1>
+  
+  <div class="post-date">
+    Published on 14 Nov 2022
+    
+  </div>
+  
+  <h1 id="hard-links-in-linux">Hard Links in Linux</h1>
+
+<p>Hard links are links which points to an inode of a file.</p>
+
+<h2 id="now-what-are-inodes-">Now what are inodes ?</h2>
+
+<p>Inode is a number which is assigned to a file or folder as a universal identifier inside a system.
+For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">stat </span>file.txt
+</code></pre></div></div>
+<p><strong>Output</strong>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  File: file.txt
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 802h/2050d	Inode: 16255425    Links: 1
+Access: <span class="o">(</span>0664/-rw-rw-r--<span class="o">)</span>  Uid: <span class="o">(</span> 1000/ jetskar<span class="o">)</span>   Gid: <span class="o">(</span> 1000/ jetskar<span class="o">)</span>
+Access: 2022-11-13 04:18:10.164573967 +0530
+Modify: 2022-11-13 04:18:10.164573967 +0530
+Change: 2022-11-13 04:18:10.164573967 +0530
+ Birth: 2022-11-13 04:18:10.164573967 +0530
+</code></pre></div></div>
+
+<p><strong>Explanation</strong>:</p>
+<ol>
+  <li>Under the Blocks attribute we see “Inode” which shows a specific number, this number is the original identifier of the file in the whole system.</li>
+  <li>Under inode there is information regarding the data’s permissions and access time all of which is stored inside blocks of data.</li>
+  <li>When we create a file we store some information in it, we tell linux to store this information under a file name.</li>
+</ol>
+
+<p>Major benifit from hardlinking is that a file can be accessed by multiple users at the same time without making two copies of it at different locations.</p>
+
+<h2 id="limitations-to-hardlinks-in-linux">Limitations to hardlinks in linux</h2>
+
+<ol>
+  <li>Hardlinks can only be made for files to files and never directory to directory or file to directory or vice versa.</li>
+  <li>You cannot create hardlinks between different filesystems, for example creating a hardlink between your local disk and your external disk will not work.</li>
+  <li>While making hardlinks it is important to have apropriate permissions to access the file properly.</li>
+</ol>
+
+<h2 id="creating-hardlinks">Creating hardlinks:</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ln</span> /home/Jason/filename.jpg /home/araon/filename.jpg
+</code></pre></div></div>
+
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2022/11/14/hardlinks-linux.html';
+     this.page.identifier = '/2022/11/14/hardlinks-linux';
+     this.page.title = 'Hardlinks in Linux';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//shellshock100.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2022/11/16/contact.html">
+            Contact
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/11/16/about.html">
+            About
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/11/14/suid-agid-and-stickybit.html">
+            SUID, SGID and Stickybit
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits">This site is made with Jekyll by <a href="https://github.com/depgod">shellshock</a> with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>
