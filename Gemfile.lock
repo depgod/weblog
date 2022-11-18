@@ -29,8 +29,14 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 2.0)
+    jekyll-dash (2.4.0)
+      jekyll (~> 4.0)
+      jekyll-feed (~> 0.14)
+      jekyll-paginate
+      jekyll-seo-tag (~> 2.1)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
+    jekyll-paginate (1.1.0)
     jekyll-paginate-v2 (3.0.0)
       jekyll (>= 3.0, < 5.0)
     jekyll-sass-converter (2.2.0)
@@ -79,6 +85,7 @@ PLATFORMS
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.2)
+  jekyll-dash (~> 2)
   jekyll-feed (~> 0.12)
   jekyll-paginate-v2
   jekyll-tagging
