@@ -36,6 +36,9 @@ dash:
     - url: https://github.com/depgod
       icon: github-square
       color: purple
+    - url: https://t.me/athousandchars
+      icon: telegram
+      color: blue
 
   # wether the author box should be displayed
   show_author: true
