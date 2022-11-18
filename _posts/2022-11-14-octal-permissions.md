@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Octal Permissions
 tags: linux
 ---

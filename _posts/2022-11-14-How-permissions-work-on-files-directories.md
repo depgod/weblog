@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: How permissions work on files and directories
 tags: linux
 ---

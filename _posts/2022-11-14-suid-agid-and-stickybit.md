@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: SUID, SGID and Stickybit
 tags: linux
 ---

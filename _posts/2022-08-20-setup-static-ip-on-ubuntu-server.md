@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Setup static ip on ubuntu-server
 tags: networking
 ---

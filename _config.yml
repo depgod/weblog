@@ -1,67 +1,28 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 title: shellshock
+author: depgod
 email: shellshock.mail@skiff.com
-description: >- # this means to ignore newlines until "baseurl:"
-  shellshock is a sys admin and homelaber, likes to occasionaly blog about linux and stuff related to it.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://shellshock.lol"
-twitter_username: jekyllrb
-github_username:  jekyll
+description: > # this means to ignore newlines until "show_exerpts:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+show_excerpts: false # set to true to show excerpts on the homepage
 
-# Build settings
-#  - jekyll-md5
-#  - jekyll-dash
-# jekyll-paginate
 paginate: 5
 paginate_path: "/blog/page:num/"
 
-# jekyll-tagging
 tag_permalink_style: pretty
 tag_page_layout: tag_page
 tag_page_dir: tag
 
-# jekyll-feed
-tag_feed_layout: tag_feed
-tag_feed_dir: tag
-
+# jekyll-dash date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 dash:
   # the way how dates should be displayed
   date_format: "%b %-d, %Y"
 
   # (optional) discqus comment configuration
   disqus:
-    shortname: shellshock100  
-
-  # the animation speed of the post scroll-in effect
-  animation_speed: 50
-
-  # wether to enable Right-to-Left support or not
-  rtl: false
-
-  # Replaces the default avatar provider (gravatar)
-  #avatar_source: github
-  #github_username: bitbrain
-  #avatar_source: local
-  #avatar_path: /assets/avatar.png
+    shortname: shellshock100
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
@@ -76,34 +37,27 @@ dash:
       icon: github-square
       color: purple
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-#
-#
+  # wether the author box should be displayed
+  show_author: true
 
+  # the animation speed of the scroll-in effect
+  animation_speed: 50
+
+  # wether to enable Right-to-Left support or not
+  rtl: false
+
+  # Replaces the default avatar provider (gravatar)
+  #avatar_source: github
+  #github_username: bitbrain
+  #avatar_source: local
+  #avatar_path: /assets/avatar.png
+
+# Build settings
 theme: jekyll-dash
 
 plugins:
-  - jekyll-feed
-  - jekyll/tagging
-  - jekyll-seo-tag
-  - jekyll-paginate-v2
-  - jekyll-sitemap
-  - jekyll-youtube
+ - jekyll-feed
+ - jekyll-seo-tag
+ - jekyll-paginate
+ - liquid-md5
+# - jekyll/tagging

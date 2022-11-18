@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: File Directory Permissions
 tags: linux
 ---

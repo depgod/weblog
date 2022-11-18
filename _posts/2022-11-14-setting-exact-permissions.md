@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Setting Exact Permissions
 tags: linux
 ---

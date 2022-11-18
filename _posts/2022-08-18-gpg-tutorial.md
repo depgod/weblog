@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Managing our GPG keys on linux for better security
 tags: linux
 ---

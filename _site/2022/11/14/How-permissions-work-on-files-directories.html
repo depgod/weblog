@@ -6,6 +6,7 @@
 <title>How permissions work on files and directories | shellshock</title>
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="How permissions work on files and directories" />
+<meta name="author" content="depgod" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="List set and change standard permissions" />
 <meta property="og:description" content="List set and change standard permissions" />
@@ -17,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How permissions work on files and directories" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-14T00:00:00+05:30","datePublished":"2022-11-14T00:00:00+05:30","description":"List set and change standard permissions","headline":"How permissions work on files and directories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"},"url":"http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"depgod"},"dateModified":"2022-11-14T00:00:00+05:30","datePublished":"2022-11-14T00:00:00+05:30","description":"List set and change standard permissions","headline":"How permissions work on files and directories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"},"url":"http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -26,31 +27,27 @@
 </head>
 <body><div class="site-header">
   <div class="wrapper">
-	  <a class="site-title" rel="author" href="/">shellshock<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>&nbsp;&nbsp;<a href="http://127.0.0.1:4000/2022/11/16/about.html">About</a>&nbsp;&nbsp;<a href="http://127.0.0.1:4000/2022/11/16/contact.html">Contact</a>
+    <a class="site-title" rel="author" href="/">shellshock<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
     <span class="social_links">
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/linux"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="https://shellshock.lol"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/depgod"><i class="fab fa-github-square"></i></a>
+        
         
     </span>
   </div>
 </div>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        
-  <div class="author-box">
-
-<div class="description">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</div>
-
-</div>
-
-
-<div class="post">
-  <h1 class="post-title">How permissions work on files and directories</h1>
-  
-  <div class="post-date">
-    Published on 14 Nov 2022
-    
-  </div>
-  
-  <h1 id="list-set-and-change-standard-permissions">List set and change standard permissions</h1>
+        <h1 id="list-set-and-change-standard-permissions">List set and change standard permissions</h1>
 
 <p><strong>chgrp</strong> - change group<br />
 Change group ownerships</p>
@@ -90,93 +87,11 @@ Other than the user their is also a family attribiute next to it which is a grou
 </code></pre></div></div>
 
 
-</div>
-
-
-
-
-
-<div class="related">
-  <h2>related posts</h2>
-  <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/jekyll/update/2022/11/16/welcome-to-jekyll.html">
-            Welcome to Jekyll!
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/11/16/contact.html">
-            Contact
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/11/16/about.html">
-            About
-          </a>
-        </h3>
-      </li>
-    
-  </ul>
-</div>
-
-
-
-
-
-
-<script>
-  let i = 0;
-  const text = '';
-  const speed = parseInt('50');
-  
-  function typeWriter() {
-    if (i < text.length) {
-      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
-
-  document.getElementById('animated-post-description').style.display = 'initial';
-  typeWriter();
-
-  // Image modal
-  var $imgs = [];
-  $('img').each(function(idx) {
-    var obj = {
-      src: $(this).attr('src')
-    }
-    $imgs.push(obj);
-    var elem = $(this);
-    $(this).click(function() {
-      $('.modal').magnificPopup('open', idx);
-    });
-  });
-
-  $('.modal').magnificPopup({
-    items: $imgs,
-    type: 'image',
-    closeOnContentClick: true,
-    mainClass: 'mfp-img-mobile',
-    image: {
-      verticalFit: true
-    }
-    
-  });
-</script>
 
       </div>
     </main><footer class="site-footer">
   <div class="wrapper">
-    <div class="credits">This site is made with Jekyll by <a href="https://github.com/depgod">shellshock</a> with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <div class="credits"> ❤️I Inspired by jekyll-dash.<div class="toggleWrapper">
     <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
     <label for="theme-toggle" class="toggle">
     <span class="toggle__handler">

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Adding and removing Permissions
 tags: linux
 ---

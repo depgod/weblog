@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Softlinks in linux
 tags: linux
 ---

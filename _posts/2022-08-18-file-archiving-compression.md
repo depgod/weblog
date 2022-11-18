@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: Basic file archiving and compression on linux
 tags: linux
 ---
