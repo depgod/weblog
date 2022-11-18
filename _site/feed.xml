@@ -1,21 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-19T02:59:09+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">shellshock</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><author><name>depgod</name></author><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/11/16/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-11-16T07:29:13+05:30</published><updated>2022-11-16T07:29:13+05:30</updated><id>http://localhost:4000/jekyll/update/2022/11/16/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/11/16/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
-
-<p>Jekyll requires blog post files to be named according to the following format:</p>
-
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
-
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
-
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>depgod</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">How permissions work on files and directories</title><link href="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html" rel="alternate" type="text/html" title="How permissions work on files and directories" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories</id><content type="html" xml:base="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"><![CDATA[<h1 id="list-set-and-change-standard-permissions">List set and change standard permissions</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-19T03:04:14+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">shellshock</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><author><name>depgod</name></author><entry><title type="html">How permissions work on files and directories</title><link href="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html" rel="alternate" type="text/html" title="How permissions work on files and directories" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories</id><content type="html" xml:base="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"><![CDATA[<h1 id="list-set-and-change-standard-permissions">List set and change standard permissions</h1>
 
 <p><strong>chgrp</strong> - change group<br />
 Change group ownerships</p>
@@ -384,4 +368,42 @@ path_to_link_file -&gt; represents shortcut</p>
 
 <h2 id="important-points-of-softlinks">Important points of softlinks</h2>
 
-<p>Softlinks can be made between file to file or dir to dir or even between different filesystems.</p>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[Softlinks in linux]]></summary></entry><entry><title type="html">SUID, SGID and Stickybit</title><link href="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html" rel="alternate" type="text/html" title="SUID, SGID and Stickybit" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/suid-agid-and-stickybit</id><content type="html" xml:base="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html"><![CDATA[<h1 id="suid-sgid-and-sticky-bit">SUID, SGID, and Sticky Bit</h1>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[SUID, SGID, and Sticky Bit]]></summary></entry></feed>
+<p>Softlinks can be made between file to file or dir to dir or even between different filesystems.</p>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[Softlinks in linux]]></summary></entry><entry><title type="html">SUID, SGID and Stickybit</title><link href="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html" rel="alternate" type="text/html" title="SUID, SGID and Stickybit" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/suid-agid-and-stickybit</id><content type="html" xml:base="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html"><![CDATA[<h1 id="suid-sgid-and-sticky-bit">SUID, SGID, and Sticky Bit</h1>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[SUID, SGID, and Sticky Bit]]></summary></entry><entry><title type="html">Setup static ip on ubuntu-server</title><link href="http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html" rel="alternate" type="text/html" title="Setup static ip on ubuntu-server" /><published>2022-08-20T00:00:00+05:30</published><updated>2022-08-20T00:00:00+05:30</updated><id>http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server</id><content type="html" xml:base="http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html"><![CDATA[<h2 id="tutorial">Tutorial</h2>
+
+<p><strong>Using netplan</strong></p>
+
+<ol>
+  <li>First checkout your interface name:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ip a  
+</code></pre></div>    </div>
+    <p>Image</p>
+  </li>
+  <li>Now edit your netplan config file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano /etc/netplan/netplan-config.yaml  
+</code></pre></div>    </div>
+  </li>
+  <li>Now enter the following:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>network:  
+  version: 2  
+  rendered: networkd  
+  ethernets:  
+ <span class="o">[</span>interface name]:  
+   dhcp4: no  
+   addresses:   
+     - 192.168.1.10/24  
+   gateway4: 192.168.1.1  
+   nameservers:  
+     addresses:   
+     - 8.8.8.8  
+     - 8.8.4.4  
+     - 8.8.4.4  
+</code></pre></div>    </div>
+    <p>Here we have disabled DHCP and given a local ip with gateway and nameservers.<br />
+<strong>NOTE: YAML files are highly space sensitive.</strong></p>
+  </li>
+  <li>After saving the above file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>netplan try netplan-config.yaml
+</code></pre></div>    </div>
+    <p>This will test the configuration and will ask to revert to default if some error is seen.</p>
+  </li>
+</ol>]]></content><author><name>depgod</name></author><category term="networking" /><summary type="html"><![CDATA[Tutorial Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive.]]></summary></entry></feed>
