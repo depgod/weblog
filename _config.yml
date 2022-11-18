@@ -38,6 +38,43 @@ plugins:
   - jekyll-feed
   - jekyll-youtube
 
+# jekyll-paginate
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+dash:
+  # the way how dates should be displayed
+  date_format: "%b %-d, %Y"
+
+  # (optional) discqus comment configuration
+  disqus:
+    shortname: shellshock100  
+
+  # the animation speed of the post scroll-in effect
+  animation_speed: 50
+
+  # wether to enable Right-to-Left support or not
+  rtl: false
+
+  # Replaces the default avatar provider (gravatar)
+  #avatar_source: github
+  #github_username: bitbrain
+  #avatar_source: local
+  #avatar_path: /assets/avatar.png
+
+  # generate social links in footer
+  # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
+  social_links:
+    - url: https://twitter.com/linux
+      icon: twitter-square
+      color: cyan
+    - url: https://shellshock.lol
+      icon: itch-io
+      color: red
+    - url: https://github.com/depgod
+      icon: github-square
+      color: purple
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
