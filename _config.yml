@@ -21,7 +21,7 @@ dash:
 
   # (optional) discqus comment configuration
   disqus:
-    shortname: @disqus_SH7eHxXHfs
+    shortname: disqus_SH7eHxXHfs
 
 
   # generate social links in footer
