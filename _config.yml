@@ -103,3 +103,9 @@ dash:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+#
+#
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-tagging
