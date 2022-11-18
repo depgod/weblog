@@ -23,7 +23,7 @@ email: shellshock.mail@skiff.com
 description: >- # this means to ignore newlines until "baseurl:"
   shellshock is a sys admin and homelaber, likes to occasionaly blog about linux and stuff related to it.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://shellshock.lol"
 twitter_username: jekyllrb
 github_username:  jekyll
 
