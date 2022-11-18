@@ -31,14 +31,13 @@ github_username:  jekyll
 theme: jekyll-dash
 plugins:
   - jekyll-feed
-  - jekyll-tagging
+  - jekyll/tagging
   - jekyll-seo-tag
   - jekyll-paginate-v2
   - jekyll-sitemap
-  - jekyll-feed
   - jekyll-youtube
   - jekyll-dash
-
+  - jekyll-md5
 # jekyll-paginate
 paginate: 5
 paginate_path: "/blog/page:num/"

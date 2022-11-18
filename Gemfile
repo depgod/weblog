@@ -15,6 +15,8 @@ gem "liquid-md5"
 gem "jekyll-tagging"
 gem "kramdown-parser-gfm"
 gem 'jekyll-dash', '~> 2'
+gem "jekyll-sitemap"
+gem "jekyll-youtube"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
