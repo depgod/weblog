@@ -37,6 +37,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-youtube
+  - jekyll-dash
 
 # jekyll-paginate
 paginate: 5
