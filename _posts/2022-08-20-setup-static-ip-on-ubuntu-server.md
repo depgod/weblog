@@ -3,7 +3,7 @@ layout: page
 title: Setup static ip on ubuntu-server
 tags: networking
 ---
-## Tutorial
+## Setup static ip on ubuntu-server
   
 **Using netplan**  
   
