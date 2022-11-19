@@ -41,6 +41,10 @@ dash:
     - url: https://t.me/athousandchars
       icon: telegram
       color: blue
+    - url: https://discordapp.com/users/commandline#5301
+      icon: discord
+      color: purple
+
 
   # wether the author box should be displayed
   show_author: true
