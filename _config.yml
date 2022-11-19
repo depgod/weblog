@@ -70,3 +70,7 @@ plugins:
  - jekyll-paginate
  - liquid-md5
 # - jekyll/tagging
+
+
+feed:
+  path: /feed.atom
