@@ -75,6 +75,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll-dash (~> 2)
+  jekyll-feed
   kramdown-parser-gfm
   liquid-md5
   webrick (~> 1.7)
