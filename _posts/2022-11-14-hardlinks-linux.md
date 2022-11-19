@@ -21,7 +21,7 @@ __Output__:
   File: file.txt
   Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
 Device: 802h/2050d	Inode: 16255425    Links: 1
-Access: (0664/-rw-rw-r--)  Uid: ( 1000/ jetskar)   Gid: ( 1000/ jetskar)
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/ user)   Gid: ( 1000/ user)
 Access: 2022-11-13 04:18:10.164573967 +0530
 Modify: 2022-11-13 04:18:10.164573967 +0530
 Change: 2022-11-13 04:18:10.164573967 +0530
