@@ -43,7 +43,7 @@ $ groups
 ```
 __Output__:
 ```bash
-$ jetskar adm cdrom sudo dip plugdev lpadmin lxd sambashare
+$ someuser adm cdrom sudo dip plugdev lpadmin lxd sambashare
 ```
 
 ### Changing owenership of file/directory we use `chown`:
