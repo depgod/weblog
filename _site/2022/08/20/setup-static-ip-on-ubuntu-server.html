@@ -8,8 +8,8 @@
 <meta property="og:title" content="Setup static ip on ubuntu-server" />
 <meta name="author" content="depgod" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Tutorial Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive." />
-<meta property="og:description" content="Tutorial Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive." />
+<meta name="description" content="Setup static ip on ubuntu-server Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive." />
+<meta property="og:description" content="Setup static ip on ubuntu-server Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive." />
 <link rel="canonical" href="http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html" />
 <meta property="og:url" content="http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html" />
 <meta property="og:site_name" content="shellshock" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setup static ip on ubuntu-server" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"depgod"},"dateModified":"2022-08-20T00:00:00+05:30","datePublished":"2022-08-20T00:00:00+05:30","description":"Tutorial Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive.","headline":"Setup static ip on ubuntu-server","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html"},"url":"http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"depgod"},"dateModified":"2022-08-20T00:00:00+05:30","datePublished":"2022-08-20T00:00:00+05:30","description":"Setup static ip on ubuntu-server Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive.","headline":"Setup static ip on ubuntu-server","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html"},"url":"http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -51,7 +51,7 @@
 </div>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h2 id="tutorial">Tutorial</h2>
+        <h2 id="setup-static-ip-on-ubuntu-server">Setup static ip on ubuntu-server</h2>
 
 <p><strong>Using netplan</strong></p>
 
