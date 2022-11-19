@@ -37,7 +37,7 @@ dash:
       color: red
     - url: https://github.com/depgod
       icon: github-square
-      color: purple
+      color: indigo
     - url: https://t.me/athousandchars
       icon: telegram
       color: blue
