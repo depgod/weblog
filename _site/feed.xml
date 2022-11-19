@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-19T07:44:01+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">shellshock⚡</title><subtitle>👨💻 Junior sysadmin, 🐧 Ricing, 🕹️ Servers, 🏓 Table Tennis, 🍲 Food 🏗️ Homelab
-</subtitle><author><name>depgod</name></author><entry><title type="html">How permissions work on files and directories</title><link href="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html" rel="alternate" type="text/html" title="How permissions work on files and directories" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories</id><content type="html" xml:base="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"><![CDATA[<h1 id="list-set-and-change-standard-permissions">List set and change standard permissions</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-19T11:02:04+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">shellshock⚡</title><subtitle>👨💻 Junior sysadmin, 🐧 Ricing, 🕹️ Servers, 🏓 Table Tennis, 🍲 Food 🏗️ Homelab
+</subtitle><author><name>depgod</name></author><entry><title type="html">About</title><link href="http://localhost:4000/2022/11/19/about.html" rel="alternate" type="text/html" title="About" /><published>2022-11-19T00:00:00+05:30</published><updated>2022-11-19T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/19/about</id><content type="html" xml:base="http://localhost:4000/2022/11/19/about.html"><![CDATA[<h1 id="about">About</h1>]]></content><author><name>depgod</name></author><category term="about" /><summary type="html"><![CDATA[About]]></summary></entry><entry><title type="html">How permissions work on files and directories</title><link href="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html" rel="alternate" type="text/html" title="How permissions work on files and directories" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories</id><content type="html" xml:base="http://localhost:4000/2022/11/14/How-permissions-work-on-files-directories.html"><![CDATA[<h1 id="list-set-and-change-standard-permissions">List set and change standard permissions</h1>
 
 <p><strong>chgrp</strong> - change group<br />
 Change group ownerships</p>
@@ -30,7 +30,7 @@ Other than the user their is also a family attribiute next to it which is a grou
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">groups</span>
 </code></pre></div></div>
 <p><strong>Output</strong>:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jetskar adm cdrom <span class="nb">sudo </span>dip plugdev lpadmin lxd sambashare
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>someuser adm cdrom <span class="nb">sudo </span>dip plugdev lpadmin lxd sambashare
 </code></pre></div></div>
 
 <h3 id="changing-owenership-of-filedirectory-we-use-chown">Changing owenership of file/directory we use <code class="language-plaintext highlighter-rouge">chown</code>:</h3>
@@ -368,42 +368,4 @@ path_to_link_file -&gt; represents shortcut</p>
 
 <h2 id="important-points-of-softlinks">Important points of softlinks</h2>
 
-<p>Softlinks can be made between file to file or dir to dir or even between different filesystems.</p>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[Softlinks in linux]]></summary></entry><entry><title type="html">SUID, SGID and Stickybit</title><link href="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html" rel="alternate" type="text/html" title="SUID, SGID and Stickybit" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/suid-agid-and-stickybit</id><content type="html" xml:base="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html"><![CDATA[<h1 id="suid-sgid-and-sticky-bit">SUID, SGID, and Sticky Bit</h1>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[SUID, SGID, and Sticky Bit]]></summary></entry><entry><title type="html">Setup static ip on ubuntu-server</title><link href="http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html" rel="alternate" type="text/html" title="Setup static ip on ubuntu-server" /><published>2022-08-20T00:00:00+05:30</published><updated>2022-08-20T00:00:00+05:30</updated><id>http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server</id><content type="html" xml:base="http://localhost:4000/2022/08/20/setup-static-ip-on-ubuntu-server.html"><![CDATA[<h2 id="setup-static-ip-on-ubuntu-server">Setup static ip on ubuntu-server</h2>
-
-<p><strong>Using netplan</strong></p>
-
-<ol>
-  <li>First checkout your interface name:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ip a  
-</code></pre></div>    </div>
-    <p>Image</p>
-  </li>
-  <li>Now edit your netplan config file:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano /etc/netplan/netplan-config.yaml  
-</code></pre></div>    </div>
-  </li>
-  <li>Now enter the following:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>network:  
-  version: 2  
-  rendered: networkd  
-  ethernets:  
- <span class="o">[</span>interface name]:  
-   dhcp4: no  
-   addresses:   
-     - 192.168.1.10/24  
-   gateway4: 192.168.1.1  
-   nameservers:  
-     addresses:   
-     - 8.8.8.8  
-     - 8.8.4.4  
-     - 8.8.4.4  
-</code></pre></div>    </div>
-    <p>Here we have disabled DHCP and given a local ip with gateway and nameservers.<br />
-<strong>NOTE: YAML files are highly space sensitive.</strong></p>
-  </li>
-  <li>After saving the above file:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>netplan try netplan-config.yaml
-</code></pre></div>    </div>
-    <p>This will test the configuration and will ask to revert to default if some error is seen.</p>
-  </li>
-</ol>]]></content><author><name>depgod</name></author><category term="networking" /><summary type="html"><![CDATA[Setup static ip on ubuntu-server Using netplan First checkout your interface name: $ ip a Image Now edit your netplan config file: $ sudo nano /etc/netplan/netplan-config.yaml Now enter the following: $ network: version: 2 rendered: networkd ethernets: [interface name]: dhcp4: no addresses: - 192.168.1.10/24 gateway4: 192.168.1.1 nameservers: addresses: - 8.8.8.8 - 8.8.4.4 - 8.8.4.4 Here we have disabled DHCP and given a local ip with gateway and nameservers. NOTE: YAML files are highly space sensitive.]]></summary></entry></feed>
+<p>Softlinks can be made between file to file or dir to dir or even between different filesystems.</p>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[Softlinks in linux]]></summary></entry><entry><title type="html">SUID, SGID and Stickybit</title><link href="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html" rel="alternate" type="text/html" title="SUID, SGID and Stickybit" /><published>2022-11-14T00:00:00+05:30</published><updated>2022-11-14T00:00:00+05:30</updated><id>http://localhost:4000/2022/11/14/suid-agid-and-stickybit</id><content type="html" xml:base="http://localhost:4000/2022/11/14/suid-agid-and-stickybit.html"><![CDATA[<h1 id="suid-sgid-and-sticky-bit">SUID, SGID, and Sticky Bit</h1>]]></content><author><name>depgod</name></author><category term="linux" /><summary type="html"><![CDATA[SUID, SGID, and Sticky Bit]]></summary></entry></feed>
