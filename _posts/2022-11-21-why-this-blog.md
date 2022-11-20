@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Why this blog?
+title: Why this blog
 tags: life
 ---
 
