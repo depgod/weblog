@@ -1,5 +1,5 @@
 [![Deploy Jekyll site to Pages](https://github.com/depgod/weblog/actions/workflows/jekyll.yml/badge.svg)](https://github.com/depgod/weblog/actions/workflows/jekyll.yml)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fshellshock.lol&count_bg=%233D7CC8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdepgod%2Fweblog&label=visitors&countColor=%23ff8a65&labelStyle=upper)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=digitalOcean&logoColor=white)
 ![Next Cloud](https://img.shields.io/badge/Next%20Cloud-0B94DE?style=for-the-badge&logo=nextcloud&logoColor=white)
