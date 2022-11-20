@@ -1,5 +1,5 @@
 [![Deploy Jekyll site to Pages](https://github.com/depgod/weblog/actions/workflows/jekyll.yml/badge.svg)](https://github.com/depgod/weblog/actions/workflows/jekyll.yml)
-![Visitor Count](https://profile-counter.glitch.me/{YOUR USER}/count.svg)
+![Visitor Count](https://profile-counter.glitch.me/{depgod}/count.svg)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=digitalOcean&logoColor=white)
 ![Next Cloud](https://img.shields.io/badge/Next%20Cloud-0B94DE?style=for-the-badge&logo=nextcloud&logoColor=white)
