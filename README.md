@@ -1,4 +1,5 @@
 [![Deploy Jekyll site to Pages](https://github.com/depgod/weblog/actions/workflows/jekyll.yml/badge.svg)](https://github.com/depgod/weblog/actions/workflows/jekyll.yml)
+![Homelab](https://b.thumbs.redditmedia.com/Flac-ySmslzY0SE583PNA42rFbcYxLt7hqgCeUrC11s.png)
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=digitalOcean&logoColor=white)
 ![Next Cloud](https://img.shields.io/badge/Next%20Cloud-0B94DE?style=for-the-badge&logo=nextcloud&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
