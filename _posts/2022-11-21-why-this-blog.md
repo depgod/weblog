@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Why this blog?
+tags: life
 ---
 
 # Intro
