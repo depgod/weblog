@@ -4,6 +4,10 @@ title: Why this blog?
 tags: life
 ---
 
+# Why this blog?
+---
+
+
 # Intro
 
 First of all I am no content creator on this or any other platform and has no plans in future too. I made this site because I could and only plans to modify it further to learn and share stuff here. I also plan to keep posting life updates on this site.
