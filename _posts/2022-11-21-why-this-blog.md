@@ -4,7 +4,7 @@ title: Why this blog
 tags: life
 ---
 
-# Why this blog?
+# Why this blog
 ---
 
 
