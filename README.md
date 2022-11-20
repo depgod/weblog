@@ -1,6 +1,5 @@
 [![Deploy Jekyll site to Pages](https://github.com/depgod/weblog/actions/workflows/jekyll.yml/badge.svg)](https://github.com/depgod/weblog/actions/workflows/jekyll.yml)
- <a href='http://www.freevisitorcounters.com'>Free counter</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=c98a8b9042cb09f362447c8b0715b4b91903a0b5'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/980683/t/5"></script>
+![Visitor Count](https://profile-counter.glitch.me/{YOUR USER}/count.svg)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-%230167ff.svg?style=for-the-badge&logo=digitalOcean&logoColor=white)
 ![Next Cloud](https://img.shields.io/badge/Next%20Cloud-0B94DE?style=for-the-badge&logo=nextcloud&logoColor=white)
