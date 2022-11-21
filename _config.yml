@@ -44,7 +44,9 @@ dash:
     - url: https://discordapp.com/users/commandline#5301
       icon: discord
       color: purple
-
+    - url: https://rss.app/feeds/XUXvq5Vu6lgW8j1w.xml
+      icon: rss
+      color: orange
 
   # wether the author box should be displayed
   show_author: true
